@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:projeto_telas/telas/primeira_tela.dart';
+import 'package:projeto_telas/primeira_tela.dart';
 
 void main() {
   runApp(const MyApp());
