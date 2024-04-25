@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'home_tela.dart';
 
 class Telalogin extends StatelessWidget {
   const Telalogin({super.key});
@@ -8,9 +9,17 @@ class Telalogin extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: Text('Login'),
     ),
-    body: Padding(padding: EdgeInsets.all(20.0),
-    child: LoginForm(),
-    ),
+    body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => TelaHome()),
+            );
+          }, 
+          child: Text('Logar'), 
+        ),
+      ),
   };
 }
 
