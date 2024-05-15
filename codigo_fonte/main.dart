@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(theme: ThemeData(
         primarySwatch: Colors.brown,
       ),
-      home: Primeiratela(),
+      home: Tela_login(),
     );
   }
 }
