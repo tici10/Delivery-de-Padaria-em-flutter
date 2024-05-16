@@ -1,6 +1,8 @@
 import 'dart:html';
 
 import 'package:flutter/material.dart';
+import 'package:tela_novo/tela_produto.dart';
+import 'tela_produto.dart';
 
 class TelaHome extends StatelessWidget {
   const TelaHome({super.key});
@@ -9,12 +11,6 @@ class TelaHome extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
        appBar: AppBar(title: Text("Padaria")),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            print("Foi clicado!");
-          },
-          child: Icon(Icons.add),
-        ),
         body: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(
@@ -37,16 +33,18 @@ class TelaHome extends StatelessWidget {
               const Divider(),
               const Text(
                 "Preço: 2,50",
+              ),
+              ButtonTheme(
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const Produto()),
+                    );
+                  },
+                child: Text('Entrar'), 
+                )  
               )
-              child: ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                 context,
-                 MaterialPageRoute(builder: (context) => const TelaHome()),
-                );
-              },
-              child: Text('Entrar'), 
-            )
             ],
           ),
         ),
