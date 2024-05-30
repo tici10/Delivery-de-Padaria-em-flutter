@@ -21,6 +21,12 @@ class TelaHome extends StatelessWidget {
                   fontSize: 18,
                 ),
               ),
+              SizedBox(
+                width: 200,
+                height: 200,
+                child: Image.asset('assets/imagens/pao_frances.jpg'),
+              ),
+              Divider(),
               const Text(
                 "Farinha (100%), leite em pó (0,5%), gordura (1,5%), sal (2,2%), ácido ascórbico (0,01%), açúcar (2,5%), polissorbato 80 (0,3%), enzima alfa-amilase (0,2%) e água a 4°C, adicionada de acordo com a absorção no promilógrafo."
               ),
@@ -28,6 +34,7 @@ class TelaHome extends StatelessWidget {
               const Text(
                 "Preço: 2,50",
               ),
+              Divider(),
               ButtonTheme(
                 child: ElevatedButton(
                   onPressed: () {
