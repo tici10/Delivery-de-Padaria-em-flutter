@@ -8,8 +8,8 @@ class Telalogin extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Login'),
-        iconTheme: IconThemeData(color: Colors.brown),
+        title: const Text("Login", textAlign: TextAlign.center,),
+        iconTheme: const IconThemeData(color: Colors.brown),
       ),
       body: Column(
         children: <Widget>[
