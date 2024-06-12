@@ -1,11 +1,41 @@
 import 'package:flutter/material.dart';
-import 'tela_produto.dart';
+import 'package:padaria_projeto/tela.produto.dart';
+import 'package:padaria_projeto/modelos/Produto.dart';
 
 class TelaHome extends StatelessWidget {
   const TelaHome({super.key});
 
   @override
   Widget build(BuildContext context) {
+    List<String> imagensCarousel = [
+      'assets/images/bolo_ccenoura.png',
+      'assets/images/pao_de_queijo.jpg',
+      'assets/images/pizza.jpg',
+    ];
+    // Lista de produtos
+    List<Produto> produtos = [
+      Produto(
+        id: 1,
+        nome: 'Bolo de cenoura',
+        preco: 25.50,
+        descricao: 'Delicioso bolo de cenoura feito com muito carinho para você.',
+        imagem: 'assets/images/bolo_cenoura.png',
+      ),
+      Produto(
+        id: 2,
+        nome: 'Pão de queijo',
+        preco: 3.00,
+        descricao: 'Pão de queijo quentinho e macio',
+        imagem: 'assets/images/pao_de_queijo.jpg',
+      ),
+      Produto(
+        id: 3,
+        nome: 'Pizza de calabresa',
+        preco: 30.00,
+        descricao: 'Pizza de calabresa super recheada, perfeito para uma noite entre amigos.',
+        imagem: 'assets/images/pizza.jpg',
+      ),
+    ];
     return Scaffold(
        appBar: AppBar(title: Text("Padaria"),
        ),
@@ -13,39 +43,57 @@ class TelaHome extends StatelessWidget {
           padding: const EdgeInsets.all(8.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Text(
-                "Pão francês", 
-                style: TextStyle(
-                  fontWeight: FontWeight.bold, 
-                  fontSize: 18,
+            children: <Widget> [
+              SizedBox(
+                height: 200.0,
+                child: PageView.builder(
+                  itemCount: imagensCarousel.length,
+                  itemBuilder: (context, index) {
+                    return Image.asset(imagensCarousel[index]);
+                  },
                 ),
               ),
-              SizedBox(
-                width: 200,
-                height: 200,
-                child: Image.asset('assets/imagens/pao_frances.jpg'),
+              Expanded(
+                child: ListView.builder(
+                  itemCount: produtos.length,
+                  itemBuilder: (context, index) {
+                    Produto produto = produtos[index];
+                    return Card(
+                      margin: EdgeInsets.all(10.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Image.asset(produto.imagem),
+                          Text(
+                            produto.nome,
+                            style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
+                          ),
+                          Text('R\$ ${produto.preco.toStringAsFixed(2)}'),
+                          Text(
+                            produto.descricao,
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ],
+                      ),
+                    );
+                  },
+                ),
               ),
-              Divider(),
-              const Text(
-                "Farinha (100%), leite em pó (0,5%), gordura (1,5%), sal (2,2%), ácido ascórbico (0,01%), açúcar (2,5%), polissorbato 80 (0,3%), enzima alfa-amilase (0,2%) e água a 4°C, adicionada de acordo com a absorção no promilógrafo."
-              ),
-              const Divider(),
-              const Text(
-                "Preço: 2,50",
-              ),
-              Divider(),
+              const Divider(),  
               ButtonTheme(
                 child: ElevatedButton(
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const Produto()),
+                      MaterialPageRoute(builder: (context) => const Produtos()),
                     );
                   },
                 child: Text('Entrar'), 
-                )  
-              )
+                ) , 
+              ),
+              SizedBox(width: 20.0), // Adicione um SizedBox com largura de 20.0
+              Divider(),
             ],
           ),
         ),
