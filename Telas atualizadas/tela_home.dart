@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:padaria_projeto/tela.produto.dart';
-import 'package:padaria_projeto/modelos/Produto.dart';
+import 'package:projeto_flutter/modelos/Produto.dart';
+import 'package:projeto_flutter/tela_produto.dart';
 
 class TelaHome extends StatelessWidget {
   const TelaHome({super.key});
@@ -8,9 +8,9 @@ class TelaHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<String> imagensCarousel = [
-      'assets/images/bolo_ccenoura.png',
-      'assets/images/pao_de_queijo.jpg',
-      'assets/images/pizza.jpg',
+      'assets/imagens/bolo_cenoura.png',
+      'assets/imagens/pao_de_queijo.jpg',
+      'assets/imagens/pizza.jpg',
     ];
     // Lista de produtos
     List<Produto> produtos = [
@@ -19,21 +19,21 @@ class TelaHome extends StatelessWidget {
         nome: 'Bolo de cenoura',
         preco: 25.50,
         descricao: 'Delicioso bolo de cenoura feito com muito carinho para você.',
-        imagem: 'assets/images/bolo_cenoura.png',
+        imagem: 'assets/imagens/bolo-cenoura.png',
       ),
       Produto(
         id: 2,
         nome: 'Pão de queijo',
         preco: 3.00,
         descricao: 'Pão de queijo quentinho e macio',
-        imagem: 'assets/images/pao_de_queijo.jpg',
+        imagem: 'assets/imagens/pao-de-queijo.jpg',
       ),
       Produto(
         id: 3,
         nome: 'Pizza de calabresa',
         preco: 30.00,
         descricao: 'Pizza de calabresa super recheada, perfeito para uma noite entre amigos.',
-        imagem: 'assets/images/pizza.jpg',
+        imagem: 'assets/imagens/pizza.jpg',
       ),
     ];
     return Scaffold(
@@ -89,7 +89,7 @@ class TelaHome extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => const Produtos()),
                     );
                   },
-                child: Text('Entrar'), 
+                child: Text('Visualizar produto'), 
                 ) , 
               ),
               SizedBox(width: 20.0), // Adicione um SizedBox com largura de 20.0
