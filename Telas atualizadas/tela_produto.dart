@@ -2,7 +2,7 @@ import 'dart:collection';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:padaria_projeto/tela_comprar.dart';
+import 'package:projeto_flutter/tela_comprar.dart';
 
 
 class Produtos extends StatelessWidget {
@@ -22,7 +22,7 @@ class Produtos extends StatelessWidget {
           SizedBox(
             width: 200,
             height: 200,
-            child:Image.asset('assets/images/pao_de_queijo.jpg'),
+            child:Image.asset('assets/imagens/pao-de-queijo.jpg'),
           ),
           const Text('Pão de queijo feito com farinha de mandioca, queijo, leite e ovo'),
           ButtonTheme(
@@ -33,7 +33,7 @@ class Produtos extends StatelessWidget {
                   MaterialPageRoute(builder: (context) => const Comprar()),
                 );
               },
-            child: Text('Entrar'), 
+            child: Text('comprar'), 
             )  
           )
         ]
