@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:projeto_flutter/map_screen.dart';
+import 'package:projeto_flutter/tela_acompanhar.dart';
 
 class Comprar extends StatelessWidget {
   const Comprar({super.key});
@@ -11,7 +12,7 @@ class Comprar extends StatelessWidget {
         title: Text('Comprar'),
         iconTheme: IconThemeData(color: Colors.brown),
       ),
-      body: Center(
+      body: Column(
         children:<Widget>[
           Title(
             color: Colors.black, 
@@ -20,10 +21,15 @@ class Comprar extends StatelessWidget {
           ButtonTheme(
             child: ElevatedButton(
             onPressed: () {
+               Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const Acompanhar_pedido()),
+              );
             },
             child: Text('Pagar Com Pix'),
             ),
           ),
+          Divider(),
           ButtonTheme(
             child: ElevatedButton(
             onPressed: () {
@@ -31,6 +37,7 @@ class Comprar extends StatelessWidget {
             child: Text('Pagar Com Cartão'),
             ),
           ),
+          Divider(),
            ButtonTheme(
             child: ElevatedButton(
             onPressed: () {
@@ -38,15 +45,6 @@ class Comprar extends StatelessWidget {
             child: Text('Pagar em dinheiro'),
             ),
           ),
-          ElevatedButton(
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => MapScreen()),
-            );
-          },
-          child: Text('Acompanhar pedido'),
-        ),
         ],
       ),
     );
