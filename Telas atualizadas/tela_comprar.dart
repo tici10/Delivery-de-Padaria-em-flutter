@@ -12,7 +12,33 @@ class Comprar extends StatelessWidget {
         iconTheme: IconThemeData(color: Colors.brown),
       ),
       body: Center(
-        child: ElevatedButton(
+        children:<Widget>[
+          Title(
+            color: Colors.black, 
+            child: Text('Formas de Pagamento')
+          ),
+          ButtonTheme(
+            child: ElevatedButton(
+            onPressed: () {
+            },
+            child: Text('Pagar Com Pix'),
+            ),
+          ),
+          ButtonTheme(
+            child: ElevatedButton(
+            onPressed: () {
+            },
+            child: Text('Pagar Com Cartão'),
+            ),
+          ),
+           ButtonTheme(
+            child: ElevatedButton(
+            onPressed: () {
+            },
+            child: Text('Pagar em dinheiro'),
+            ),
+          ),
+          ElevatedButton(
           onPressed: () {
             Navigator.push(
               context,
@@ -21,6 +47,7 @@ class Comprar extends StatelessWidget {
           },
           child: Text('Acompanhar pedido'),
         ),
+        ],
       ),
     );
   }
