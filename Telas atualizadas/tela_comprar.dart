@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:projeto_flutter/map_screen.dart';
 
 class Comprar extends StatelessWidget {
   const Comprar({super.key});
@@ -9,6 +10,17 @@ class Comprar extends StatelessWidget {
       appBar: AppBar(
         title: Text('Comprar'),
         iconTheme: IconThemeData(color: Colors.brown),
+      ),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => MapScreen()),
+            );
+          },
+          child: Text('Acompanhar pedido'),
+        ),
       ),
     );
   }
